@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Nepsium Merchant Example</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h3 class="row center-txt rm sp">Checkout</h3>
+
+      <div>
+        <h4 class="rm sp">Fixed amount</h4>
+        <button
+          class="btn"
+          data-note="More notes"
+          data-key="NEP-PUB-c49cef6af56f449ebd99e85eef6666ea"
+          id="nepsium-pay"
+        >
+          Pay ₦2000
+        </button>
+      </div>
+
+      <div class="sec">
+        <h4 class="rm sp">Dynamic amount</h4>
+        <h5 class="rm sp">Select your currency</h5>
+        <input onclick="enable()" type="radio" name="curr" id="naira" value="naira" />NAIRA<br />
+        <input onclick="enable()" type="radio" name="curr" id="btc" value="btc" />BTC<br />
+        <input onclick="enable()" type="radio" name="curr" id="dash" value="dash" />DASH<br />
+
+        <label class="row" for="amount">Amount</label>
+        <input
+          class="row amnt"
+          id="amount"
+          placeholder="eg 0.01"
+          type="number"
+          onkeyup="handleChange()"
+        />
+
+        <button
+          disabled
+          class="btn"
+          data-note="More notes"
+          data-naira=""
+          data-btc=""
+          data-dash=""
+          data-key="NEP-PUB-0fd524b264024478b9fd0bd517b311e9"
+          id="nepsium-pay2"
+        >
+          Pay
+        </button>
+      </div>
+    </div>
+  </body>
+  <script>
+  const handleChange = () => {
+      const a = document.getElementById('amount').value;
+      const b = document.getElementById('nepsium-pay2');
+      if (document.getElementById('naira').checked) {
+        b.dataset.naira = a;
+        b.dataset.btc = "";
+        b.dataset.dash = "";
+      }
+      if (document.getElementById('btc').checked) {
+        b.dataset.btc = a;
+        b.dataset.naira = "";
+        b.dataset.dash = "";
+      }
+      if (document.getElementById('dash').checked) {
+        b.dataset.dash = a;
+        b.dataset.btc = "";
+        b.dataset.naira = "";
+      }
+    };
+
+    const enable = () => {
+      document.getElementById('nepsium-pay2').disabled = false;
+
+    }
+  </script>
+  <script>document.addEventListener("DOMContentLoaded",()=>{const t=document.getElementById("nepsium-pay2");t.addEventListener("click",()=>{const{key:e,note:n,btc:a,dash:d,naira:o}=t.dataset;e&&window.open(`https://staging.nepsium.com/payment?pubKey=${e}&note=${n}&btc=${a}&dash=${d}&naira=${o}`,"_blank")})});</script>
+  <script>document.addEventListener("DOMContentLoaded",()=>{const t=document.getElementById("nepsium-pay");t.addEventListener("click",()=>{const{key:e,note:n,btc:a,dash:d,naira:o}=t.dataset;e&&window.open(`https://staging.nepsium.com/payment?pubKey=${e}&note=${n}&btc=${a}&dash=${d}&naira=${o}`,"_blank")})});</script>
+</html>

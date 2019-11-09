@@ -1,0 +1,7 @@
+https://build-eltneg.nepsium.now.sh/payment?pubKey=NEP-PUB-0e010717d7fe4b1e8db8745a99a6119c&note=""
+
+
+http://localhost:3000/payment?pubKey=NEP-PUB-399897730a05490bb00c823b8268220f&note=""
+
+<script>document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("nepsium-pay");e.addEventListener("click",()=>{const{key:t,note:n}=e.dataset;t&&window.open(`http://localhost:3000/payment?pubKey=${t}&note=${n}`,"_blank")})});</script>
+

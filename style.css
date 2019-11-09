@@ -1,0 +1,75 @@
+:root {
+  --mobile: 375px;
+  --desktop: 1440px;
+  --pink-color: hsl(322, 100%, 66%);
+  --violet-color: hsl(265, 100%, 66%);
+  --lg-blue: hsl(214, 64%, 98%);
+  --mg-blue: hsl(208, 11%, 55%);
+  --vd-cyan: hsl(192, 100%, 9%);
+  --font-size: 18px;
+  --poppins: 'Poppins';
+  --open-sans: 'Open Sans';
+  --weight-400: 400;
+  --weight-600: 600;
+  --weight-700: 700;
+}
+
+body {
+  margin: 0px;
+  padding: 0.1px;
+  font-family: var(--open-sans);
+  background-color: var(--lg-blue);
+  background-size: cover; /* <------ */
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100vh;
+  height: auto;
+  width: 100%;
+  max-width: 100vw;
+  font-size: var(--font-size);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+    margin: 2rem auto;
+    width: 300px;
+    border: 1px gray solid;
+    padding: 0.5rem 1rem;
+}
+
+.row {
+    width: 100%;
+}
+
+.rm {
+    margin: 0;
+}
+
+.sp {
+    margin-bottom: 1rem;
+}
+
+.center-txt {
+    text-align: center;
+}
+
+.sec {
+    margin-top: 1.5rem;
+}
+
+.amnt {
+    height: 2rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    width: 200px;
+    height: 40px;
+    border: 1px red solid;
+    margin: 0 auto;
+    display: block;
+}
